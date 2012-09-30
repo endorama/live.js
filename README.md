@@ -4,12 +4,36 @@
 
 I forked their version because I couldn't find the source code hosted anywhere to integrate some bug fixes.
 
-## Example
+## Sample usage
 
-Sample usage: include live.js file in html
+Include live.js file to monitor html, js and css changes.
 
 ```html
 <script type="text/javascript" src="live.js"></script>
+```
+
+Include live.js#css to monitor css changes only.
+
+```html
+<script type="text/javascript" src="live.js#css"></script>
+```
+
+Include live.js#js to monitor js changes only.
+
+```html
+<script type="text/javascript" src="live.js#js"></script>
+```
+
+Include live.js#html to monitor html changes only.
+
+```html
+<script type="text/javascript" src="live.js#html"></script>
+```
+
+Mix and match to monitor a preferred combination such as live.js#html,css.
+
+```html
+<script type="text/javascript" src="live.js#html,css"></script>
 ```
 
 ## License
