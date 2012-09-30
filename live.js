@@ -2,23 +2,11 @@
   Live.js - One script closer to Designing in the Browser
   Written for Handcraft.com by Martin Kool (@mrtnkl).
 
-  Version 4.
-  Recent change: Made stylesheet and mimetype checks case insensitive.
+  Version 4.0.1
 
   http://livejs.com
   http://livejs.com/license (MIT)  
   @livejs
-
-  Include live.js#css to monitor css changes only.
-  Include live.js#js to monitor js changes only.
-  Include live.js#html to monitor html changes only.
-  Mix and match to monitor a preferred combination such as live.js#html,css  
-
-  By default, just include live.js to monitor all css, js and html changes.
-  
-  Live.js can also be loaded as a bookmarklet. It is best to only use it for CSS then,
-  as a page reload due to a change in html or css would not re-include the bookmarklet.
-  To monitor CSS and be notified that it has loaded, include it as: live.js#css,notify
 */
 (function () {
 
@@ -76,7 +64,7 @@
       // track local css urls
       for (var i = 0; i < links.length && active.css; i++) {
         var link = links[i], rel = link.getAttribute("rel"), href = link.getAttribute("href", 2);
-        if (href && rel && rel.match(new RegExp("stylesheet", "i")) && isLocal(href)) {
+        if (href && rel && rel.match(new RegExp("stylesheet", "i")) && isLocal(href) && href.substring(0, 4) != "data") {
           uris.push(href);
           currentLinkElements[href] = link;
         }
